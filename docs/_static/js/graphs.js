@@ -268,7 +268,6 @@ class Modal {
         });
     }
     static getUnitDescription(unit) {
-            console.log(unit)
             switch (unit) {
                 case 'msec.':
                     return '(lower is better)';
@@ -626,7 +625,20 @@ $(document).ready(function () {
     function preselectDefaultSettings(data, modal, version) {
         const defaultSelections = (version == 'ov') ? OVdefaultSelections : OVMSdefaultSelections;
         if (defaultSelections.platformTypes) {
-            const type = defaultSelections.platformTypes.data[0]
+            var fPlatforms = filterClientPlatforms(data, getSelectedNetworkModels(), getSelectedIeType(), Modal.getCoreTypes(getSelectedCoreTypes()));
+            let contains = false;
+            for (let index = 0; index < defaultSelections.platforms.data.length; index++) {
+                if(Graph.getPlatformNames(fPlatforms).includes(defaultSelections.platforms.data[index])){
+                    contains = true;
+                    break;
+                }
+              };
+
+              if(contains !== true) {
+                defaultSelections.platforms.data = Graph.getPlatformNames(fPlatforms);
+              }
+
+            const type = defaultSelections.platformTypes.data[0];
             $(`input[data-ietype="${type}"]`).prop('checked', true);
             renderClientPlatforms(data, modal, version);
         }
