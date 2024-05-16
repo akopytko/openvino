@@ -26,7 +26,7 @@ $ source env/bin/activate
 5. Install the sphinx theme
 ```
 (env) $ cd docs/openvino_sphinx_theme && python setup.py install && cd -
-``````
+```
 6. Create build folder:
 ```
 (env) $ mkdir build && cd build
