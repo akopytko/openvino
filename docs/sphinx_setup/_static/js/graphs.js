@@ -127,20 +127,21 @@ class Graph {
     static getNetworkModels(graphDataArr) {
         return Array.from(new Set(graphDataArr.map((obj) => obj.Model)));
     }
-    static getIeTypes(graphDataArr) {
-        return Array.from(new Set(graphDataArr.map((obj) => 
+    static getUniqueIeTypes(graphDataArr) {
+        let x = Array.from(new Set(graphDataArr.map((obj) => 
             { return {name: obj.PlatformType, desc: obj.PlatformTypeDesc} }
         )));
         
+        return [...new Map(x.map(item => [item['name'], item])).values()];
     }
 
-    static getUniqParameters(graphDataArr) {
+    static getUniqueParameters(graphDataArr) {
         const uniqueParameters = new Set(graphDataArr.flatMap(obj => Object.keys(obj.Parameters)));
         const capitalizedParameters = Array.from(uniqueParameters, word => word.charAt(0).toUpperCase() + word.slice(1));
         return [...new Set(capitalizedParameters)];
     }
 
-    static getUniqPrecisions(graphDataArr) {
+    static getUniquePrecisions(graphDataArr) {
         const uniquePrecisions = new Set();
         graphDataArr.forEach(obj => {
             Object.values(obj.Parameters).forEach(value => {
@@ -297,7 +298,7 @@ $(document).ready(function () {
     function renderModal(graph) {
         new Graph(graph);
         var networkModels = Graph.getNetworkModels(graph);
-        var ieTypeLabels = Graph.getIeTypes(graph);
+        var ieTypeLabels = Graph.getUniqueIeTypes(graph);
         fetch('../_static/html/modal.html').then((response) => response.text()).then((text) => {
 
             var modal = $('<div>');
@@ -314,11 +315,11 @@ $(document).ready(function () {
             modal.find('.models-column-two').append(models.slice(models.length / 2));
 
             $('.kpi-column').empty();
-            const kpiLabels = Graph.getUniqParameters(graph).map((kpi) => createCheckMark(kpi, 'kpi'));
+            const kpiLabels = Graph.getUniqueParameters(graph).map((kpi) => createCheckMark(kpi, 'kpi'));
             modal.find('.kpi-column').append(kpiLabels);
             
             $('.precisions-column').empty();
-            const precisions = Graph.getUniqPrecisions(graph).map((precision) => createCheckMark(precision, 'precision'));
+            const precisions = Graph.getUniquePrecisions(graph).map((precision) => createCheckMark(precision, 'precision'));
             modal.find('.precisions-column').append(precisions);
 
             selectAllCheckboxes(precisions);
@@ -683,7 +684,6 @@ $(document).ready(function () {
             var kpi = str.toLowerCase();
             var groupUnit = filteredPlatforms[0];
             var kpiData = Graph.getDatabyKPI(filteredPlatforms, kpi);
-            console.log(kpiData);
             var config = Graph.getSpecifiedGraphConfig(kpi, groupUnit, precisions);
             precisions.forEach((precision, index) => {
                 config.datasets[index].data = kpiData.map(tData => tData[precision]);
