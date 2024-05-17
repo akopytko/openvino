@@ -44,8 +44,6 @@ function getKpiColor(index) {
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
-// ====================================================
-
 
 class Filter {
 
@@ -170,12 +168,8 @@ class Graph {
         return [];
     }
 
-    static getSpecifiedGraphConfig(kpi, item, precisions) {
+    static getSpecifiedGraphConfig(precisions) {
         return {
-            chartTitle: capitalizeFirstLetter(kpi),
-            iconClass: 'latency-icon',
-            unit: item.Parameters[kpi].Unit,
-            unitDesc: item.Parameters[kpi].UnitDesc,
             datasets: precisions.map((precision) => { return { data: null, color: null, label: capitalizeFirstLetter(precision) } })
         }
     }
@@ -433,14 +427,6 @@ $(document).ready(function () {
         });
     }
 
-    function hideCoreSelectorTypes() {
-        $('.client-platform-column').find('.selectable-box-container').hide();
-    }
-
-    function filterClientPlatforms(graph, ietype) {
-        return Filter.ByIeType(graph, ietype);
-    }
-
     function renderClientPlatforms(graph, modal) {
         if (getSelectedIeType() === 'core') {
             showCoreSelectorTypes(Modal.getCoreTypesLabels(), data, modal);
@@ -450,6 +436,14 @@ $(document).ready(function () {
         }
         var fPlatforms = filterClientPlatforms(graph, getSelectedIeType());
         renderClientPlatformsItems(modal, Graph.getPlatformNames(fPlatforms));
+    }
+
+    function hideCoreSelectorTypes() {
+        $('.client-platform-column').find('.selectable-box-container').hide();
+    }
+
+    function filterClientPlatforms(graph, ietype) {
+        return Filter.ByIeType(graph, ietype);
     }
 
     function renderClientPlatformsItems(modal, platformNames) {
@@ -491,7 +485,6 @@ $(document).ready(function () {
     }
 
     // =================== HTMLLEGEND =========================
-
     const getOrCreateLegendList = (chart, id) => {
         const legendContainer = document.getElementById(id);
         let listContainer = legendContainer.querySelector('ul');
@@ -680,34 +673,30 @@ $(document).ready(function () {
         chartContainer.append(chartWrap);
         var labels = Graph.getPlatformNames(filteredPlatforms);
 
-        var graphConfigs = kpis.map((str, index) => {
+        var graphConfigs = kpis.map((str) => {
             var kpi = str.toLowerCase();
             var groupUnit = filteredPlatforms[0];
             var kpiData = Graph.getDatabyKPI(filteredPlatforms, kpi);
-            var config = Graph.getSpecifiedGraphConfig(kpi, groupUnit, precisions);
+            var config = Graph.getSpecifiedGraphConfig(precisions);
             precisions.forEach((precision, index) => {
                 config.datasets[index].data = kpiData.map(tData => tData[precision]);
                 config.datasets[index].color = getKpiColor(index);
-                // config.datasets[index].unit = groupUnit.Parameters[kpi].Unit;
-                // config.datasets[index].unitDesc = groupUnit.Parameters[kpi].UnitDesc;
-                // config.datasets[index].iconClass = 'latency-icon';
-                // config.datasets[index].chartTitle = capitalizeFirstLetter(kpi);
-                config.datasets[index].datasets = precisions.map((precision) => { return { data: null, color: null, label: capitalizeFirstLetter(precision) } });
+                config.unit = groupUnit.Parameters[kpi].Unit;
+                config.unitDesc = groupUnit.Parameters[kpi].UnitDesc;
+                config.iconClass = groupUnit.Parameters[kpi].Icon ?? 'latency-icon';
+                config.chartTitle = capitalizeFirstLetter(kpi);
+                config.datasets[index].datasets = precisions.map((precision) => { return { data: null, color: null, label: capitalizeFirstLetter(precision) } })
             });
             return config;
         });
 
-
-        // get the client platform labels and create labels for all the graphs
         var labelsContainer = $('<div>');
         labelsContainer.addClass('chart-labels-container');
         chartWrap.append(labelsContainer);
 
-        // get the kpi title's and create headers for the graphs 
         var chartGraphsContainer = $('<div>');
         chartGraphsContainer.addClass('chart-graphs-container');
         chartWrap.append(chartGraphsContainer);
-
 
         graphConfigs.forEach((graphConfig, index) => {
             const id = getRandomNumber();
@@ -756,7 +745,6 @@ $(document).ready(function () {
     }
 
     function processMetricNew(labels, datasets, chartTitle, container, widthClass, id) {
-        // ratio for consistent chart label height
         var heightRatio = (30 + (labels.length * 55));
         var chart = $('<div>');
         const containerId = `legend-container-${id}`;
