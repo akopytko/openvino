@@ -90,14 +90,6 @@
         flex-direction: row;
     }
 
-    ul.no-bullets li:nth-of-type(3) {
-        display: list-item !important;
-    }
-
-    ul.no-bullets li:nth-of-type(4) {
-        display: list-item !important;
-    }
-
     /* cookie wap requirement */
     li#wap_dns {
         display: none;
@@ -110,6 +102,10 @@
 
     .reference:hover {
         text-decoration: underline;
+    }
+
+    .footer_problem_fix {
+        display: block;
     }
 </style>
 
@@ -129,7 +125,8 @@
                 <ul class="no-bullets">
                     <lh>Legal</lh>
                     <li><a href="https://docs.openvino.ai/2024/about-openvino/additional-resources/legal-information.html" alt="the intel">Terms of Use</a></li>
-                    <li><a href="https://www.intel.com/content/www/us/en/privacy/intel-privacy-notice.html" alt="legal and responsible ai information" target="_blank">Legal and Responsible AI Information</a></li>
+                    <li><a href="https://www.intel.com/content/www/us/en/privacy/intel-privacy-notice.html" alt="legal and responsible ai information" target="_blank">Legal and Responsible AI
+                            Information</a></li>
                     <li><a href="https://www.intel.com/content/www/us/en/artificial-intelligence/responsible-ai.html" alt="responsible ai" target="_blank">Responsible AI</a></li>
                 </ul>
                 <ul class="no-bullets">
@@ -137,7 +134,9 @@
                     <li><a href="https://www.intel.com/content/www/us/en/privacy/intel-cookie-notice.html" alt="cookies policy" target="_blank" data-cookie-notice="true">Cookies</a></li>
                     <li><a href="https://www.intel.com/content/www/us/en/privacy/intel-privacy-notice.html" alt="privacy" target="_blank">Privacy</a></li>
                     <li data-wap_ref="dns" id="wap_dns"><a href="/#" alt="your privacy choice" target="_parent">Your Privacy Choices</a></li>
-                    <li data-wap_ref="nac" id="wap_nac"><a href="https://www.intel.com/content/www/us/en/privacy/privacy-residents-certain-states.html" alt="notice at collection" target="_parent">Notice at Collection</a></li>
+                    <li id="footer_problem_fix"></li>
+                    <li data-wap_ref="nac" id="wap_nac"><a href="https://www.intel.com/content/www/us/en/privacy/privacy-residents-certain-states.html"
+                            alt="notice at collection" target="_parent">Notice at Collection</a></li>
                 </ul>
             </div>
             <a id="newsletterTrigger" class="newsletter-btn" href="#" alt="Newsletter"
