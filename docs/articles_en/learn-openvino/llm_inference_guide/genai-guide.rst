@@ -1,5 +1,5 @@
-Run LLM Inference on OpenVINO with the GenAI Flavor
-===============================================================================================
+Run LLMs with OpenVINO GenAI Flavor
+=====================================
 
 .. meta::
    :description: Learn how to use the OpenVINO GenAI flavor to execute LLM models.
