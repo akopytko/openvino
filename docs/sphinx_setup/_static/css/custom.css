@@ -1357,3 +1357,41 @@ input:-webkit-autofill {
 nav.bd-links p.bd-links__title {
     display: none;
 }
+
+
+/* Firefox (uncomment to work in Firefox, although other properties will not work!)  */
+/** {
+  scrollbar-width: thin;
+  scrollbar-color: #B5B5B5 #EAEAEA;
+}*/
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+  }
+  *::-webkit-scrollbar-track {
+    border-radius: 4px;
+    background-color: #EAEAEA;
+  }
+  
+  *::-webkit-scrollbar-track:hover {
+    background-color: #EFFAFC;
+  }
+  
+  *::-webkit-scrollbar-track:active {
+    background-color: #EFFAFC;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #B5B5B5;
+  }
+  
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: #0068B5;
+  }
+  
+  *::-webkit-scrollbar-thumb:active {
+    background-color: #0068B5;
+  }
