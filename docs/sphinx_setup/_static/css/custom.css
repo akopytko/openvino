@@ -12,7 +12,7 @@ main img {
     margin-bottom: 0;
 }
 
-main  .searchForm {
+main .searchForm {
     margin-bottom: 2rem;
     margin-top: 2rem;
 }
@@ -20,13 +20,18 @@ main  .searchForm {
 pre {
     white-space: pre-wrap;
     word-wrap: break-word;
-    /*background-color: white;
-     color: red !important; */
-}   /*confirm this is not necessary, if so, remove */
+    border-radius: 0 !important;}
 
+.sd-tab-content pre {
+    background-color: white !important;
+    
+}   
 button.copybtn {
     opacity: 100;
     border: white 1px solid;
+}
+
+.sd-tab-content button.copybtn {
     background-color: white !important;
 }
 
@@ -92,6 +97,9 @@ a#wap_dns {display: none;}
     padding-right: 4px;
     padding-left: 4px;
     padding-bottom: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 0px;
     margin: 0 0 0 0;
 }
 
@@ -168,6 +176,7 @@ li.breadcrumb-item {
 .bd-sidebar-primary {
     display:block !important;
     border-right: 0 !important;
+    top: 0 !important;
 }
 
 a.nav-link:hover {
