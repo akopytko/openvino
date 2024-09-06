@@ -167,6 +167,7 @@ li.breadcrumb-item {
 
 .bd-sidebar-primary {
     display:block !important;
+    border-right: 0 !important;
 }
 
 a.nav-link:hover {
