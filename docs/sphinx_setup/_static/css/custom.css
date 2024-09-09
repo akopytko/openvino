@@ -346,7 +346,15 @@ code {
 }
 
 details.sd-dropdown summary.sd-card-header+div.sd-summary-content {
-    background-color: rgb(242, 248, 251);
+    background-color: #F8F8F8;
+}
+
+details.sd-dropdown summary.sd-card-header {
+    background-color: #E5E5E5 !important;
+}
+
+details.sd-dropdown summary.sd-card-header:hover {
+    background-color: #CCCCCC !important;
 }
 
 /* Table Sort Button */
@@ -430,6 +438,7 @@ details.sd-dropdown summary.sd-card-header+div.sd-summary-content {
 .transition-banner > p {
     margin-bottom: 0;
 }
+
 
 .transition-banner .close-banner {
     position:absolute;

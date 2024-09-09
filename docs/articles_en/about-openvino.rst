@@ -1,6 +1,260 @@
-About OpenVINO
+About OpenVINO h1
 ==============
 
+About OpenVINO h2
+###################
+
+About OpenVINO h3
+++++++++++++++++++++++++++
+
+About OpenVINO h4
+---------------------------
+
+About OpenVINO h5
+@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+OpenVINO is a toolkit for simple and efficient deployment of various deep learning models.
+In this section you will find information on the product itself, as well as the software
+and hardware solutions it supports.
+
+| OpenVINO is a toolkit for simple and efficient deployment of various deep learning models.
+|      In this section you will find infaormation on 
+       the product itself, as well as the software
+| and hardware solutions it supports.
+
+
+* OpenVINO is a toolkit for simple and efficient deployment of various deep learning models.
+* In this section you will find information on the product itself, as well as the software
+
+  * OpenVINO is a toolkit for simple and efficient deployment of various deep learning models.
+  * In this section you will find information on the product itself, as well as the software
+
+* and hardware solutions it supports.
+* and hardware solutions it supports.
+
+1. OpenVINO is a toolkit for simple and efficient deployment of various deep learning models.
+2. In this section you will find information on the product itself, as well as the software
+
+   * OpenVINO is a toolkit for simple and efficient deployment of various deep learning models.
+   * In this section you will find information on the product itself, as well as the software
+  
+3. and hardware solutions it supports.
+
+   3. nested and hardware solutions it supports.
+
+      .. code-block:: python
+
+         python3 -c "import openvino; print(openvino.__version__)"
+
+      .. code-block:: cpp
+
+         <?xml version="1.0" ?>
+         <net name="model_file_name" version="10">
+            <layers>
+
+      .. code-block:: sh
+
+         pip install openvino-dev
+
+      .. code-block:: text
+
+         <UNZIPPED_ARCHIVE_ROOT>/runtime/version.txt      
+
+      .. code-block:: xml
+        :force:
+
+        <layer id="286" name="input" precision="FP32" type="Input">
+            <output>
+                <port id="0">
+                    <dim>1</dim>
+                    <dim>3</dim>
+
+      .. code-block:: xml
+
+        <layer id="286" name="input" precision="FP32" type="Input">
+            <output>
+                <port id="0">
+                    <dim>1</dim>
+                    <dim>3</dim>
+
+   4. nested and hardware solutions it supports.
+
+4. and hardware solutions it supports.
+
+
+| **Neural Network Compression Framework**
+| :bdg-link-dark:`Github <https://github.com/openvinotoolkit/nncf>`
+  :bdg-link-success:`User Guide <https://docs.openvino.ai/2024/openvino-workflow/model-optimization.html>`
+ 
+A suite of advanced algorithms for Neural Network inference optimization with minimal accuracy
+drop. NNCF applies quantization, filter pruning, binarization, and sparsity algorithms to PyTorch
+and TensorFlow models during training.
+|hr|
+
+
+.. |hr| raw:: html
+ 
+   <hr style="margin-top:-12px!important;border-top:1px solid #383838;">
+
+
+
+
+
+
+
+.. scrollbox::
+
+   .. code-block:: cpp
+
+      <?xml version="1.0" ?>
+      <net name="model_file_name" version="10">
+         <layers>
+            <layer id="0" name="input" type="Parameter" version="opset1">
+                  <data element_type="f32" shape="1,3,32,100"/> <!-- attributes of operation -->
+                  <output>
+                     <!-- description of output ports with type of element and tensor dimensions -->
+                     <port id="0" precision="FP32">
+                        <dim>1</dim>
+                        <dim>3</dim>
+                        <dim>32</dim>
+                        <dim>100</dim>
+                     </port>
+                  </output>
+            </layer>
+            <layer id="1" name="conv1/weights" type="Const" version="opset1">
+                  <!-- Const is only operation from opset1 that refers to the IR binary file by specifying offset and size in bytes relative to the beginning of the file. -->
+                  <data element_type="f32" offset="0" shape="64,3,3,3" size="6912"/>
+                  <output>
+                     <port id="1" precision="FP32">
+                        <dim>64</dim>
+                        <dim>3</dim>
+                        <dim>3</dim>
+                        <dim>3</dim>
+                     </port>
+                  </output>
+            </layer>
+            <layer id="2" name="conv1" type="Convolution" version="opset1">
+                  <data auto_pad="same_upper" dilations="1,1" output_padding="0,0" pads_begin="1,1" pads_end="1,1" strides="1,1"/>
+                  <input>
+                     <port id="0">
+                        <dim>1</dim>
+                        <dim>3</dim>
+                        <dim>32</dim>
+                        <dim>100</dim>
+                     </port>
+                     <port id="1">
+                        <dim>64</dim>
+                        <dim>3</dim>
+                        <dim>3</dim>
+                        <dim>3</dim>
+                     </port>
+                  </input>
+                  <output>
+                     <port id="2" precision="FP32">
+                        <dim>1</dim>
+                        <dim>64</dim>
+                        <dim>32</dim>
+                        <dim>100</dim>
+                     </port>
+                  </output>
+            </layer>
+            <layer id="3" name="conv1/activation" type="ReLU" version="opset1">
+                  <input>
+                     <port id="0">
+                        <dim>1</dim>
+                        <dim>64</dim>
+                        <dim>32</dim>
+                        <dim>100</dim>
+                     </port>
+                  </input>
+                  <output>
+                     <port id="1" precision="FP32">
+                        <dim>1</dim>
+                        <dim>64</dim>
+                        <dim>32</dim>
+                        <dim>100</dim>
+                     </port>
+                  </output>
+            </layer>
+            <layer id="4" name="output" type="Result" version="opset1">
+                  <input>
+                     <port id="0">
+                        <dim>1</dim>
+                        <dim>64</dim>
+                        <dim>32</dim>
+                        <dim>100</dim>
+                     </port>
+                  </input>
+            </layer>
+         </layers>
+         <edges>
+            <!-- Connections between layer nodes: based on ids for layers and ports used in the descriptions above -->
+            <edge from-layer="0" from-port="0" to-layer="2" to-port="0"/>
+            <edge from-layer="1" from-port="1" to-layer="2" to-port="1"/>
+            <edge from-layer="2" from-port="2" to-layer="3" to-port="0"/>
+            <edge from-layer="3" from-port="1" to-layer="4" to-port="0"/>
+         </edges>
+
+
+.. tab-set::
+
+   .. tab-item:: Workflow for convenience
+
+      This approach assumes you run your model directly.
+
+   .. tab-item:: Workflow for convenience
+
+      .. code-block:: cpp
+   
+         <?xml version="1.0" ?>
+         <net name="model_file_name" version="10">
+            <layers>
+               <layer id="0" name="input" type="Parameter" version="opset1">
+                     <data element_type="f32" shape="1,3,32,100"/> <!-- attributes of operation -->
+                     <output>
+                        <!-- description of output ports with type of element and tensor dimensions -->
+                        <port id="0" precision="FP32">
+                           <dim>1</dim>
+                           <dim>3</dim>
+                           <dim>32</dim>
+                           <dim>100</dim>
+                        </port>
+                     </output>
+               </layer>
+
+   .. tab-item:: Workflow for convenience
+
+      .. dropdown:: See more details about OVMS benchmark setup
+      
+         The benchmark setup for OVMS consists of four main parts:
+      
+      .. dropdown:: See more details about OVMS benchmark setup
+      
+         The benchmark setup for OVMS consists of four main parts:
+      
+      .. dropdown:: See more details about OVMS benchmark setup
+      
+         The benchmark setup for OVMS consists of four main parts:
+
+
+
+
+.. dropdown:: See more details about OVMS benchmark setup
+
+   The benchmark setup for OVMS consists of four main parts:
+
+.. dropdown:: See more details about OVMS benchmark setup
+
+   The benchmark setup for OVMS consists of four main parts:
+
+.. dropdown:: See more details about OVMS benchmark setup
+
+   The benchmark setup for OVMS consists of four main parts:
+
+.. dropdown:: See more details about OVMS benchmark setup
+
+   The benchmark setup for OVMS consists of four main parts:
 
 .. toctree::
    :maxdepth: 1
@@ -11,64 +265,5 @@ About OpenVINO
    about-openvino/contributing
    Release Notes <about-openvino/release-notes-openvino>
 
-OpenVINO is a toolkit for simple and efficient deployment of various deep learning models.
-In this section you will find information on the product itself, as well as the software
-and hardware solutions it supports.
-
-OpenVINO (Open Visual Inference and Neural network Optimization) is an open-source software toolkit designed to optimize, accelerate, and deploy deep learning models for user applications. OpenVINO was developed by Intel to work efficiently on a wide range of Intel hardware platforms, including CPUs (x86 and Arm), GPUs, and NPUs.
-
-
-Features
-##############################################################
-
-One of the main purposes of OpenVINO is to streamline the deployment of deep learning models in user applications. It optimizes and accelerates model inference, which is crucial for such domains as Generative AI, Large Language models, and use cases like object detection, classification, segmentation, and many others.
-
-* :doc:`Model Optimization <openvino-workflow/model-optimization>`
-
-OpenVINO provides multiple optimization methods for both the training and post-training stages, including weight compression for Large Language models and Intel Optimum integration with Hugging Face.
-
-* :doc:`Model Conversion and Framework Compatibility <openvino-workflow/model-preparation>`
-
-Supported models can be loaded directly or converted to the OpenVINO format to achieve better performance. Supported frameworks include ONNX, PyTorch, TensorFlow, TensorFlow Lite, Keras, and PaddlePaddle.
-
-* :doc:`Model Inference <openvino-workflow/running-inference>`
-
-OpenVINO accelerates deep learning models on various hardware platforms, ensuring real-time, efficient inference.
-
-* `Deployment on a server <https://github.com/openvinotoolkit/model_server>`__
-
-A model can be deployed either locally using OpenVINO Runtime or on a model server. Runtime is a set of C++ libraries with C and Python bindings providing a common API to deliver inference solutions. The model server enables quick model inference using external resources.
-
-Architecture
-##############################################################
-
-To learn more about how OpenVINO works, read the Developer documentation on its `architecture <https://github.com/openvinotoolkit/openvino/blob/master/src/docs/architecture.md>`__ and `core components <https://github.com/openvinotoolkit/openvino/blob/master/src/README.md>`__.
-
-OpenVINO Ecosystem
-##############################################################
-
-Along with the primary components of model optimization and runtime, the toolkit also includes:
-
-* `Neural Network Compression Framework (NNCF) <https://github.com/openvinotoolkit/nncf>`__ - a tool for enhanced OpenVINO™ inference to get performance boost with minimal accuracy drop.
-* :doc:`Openvino Notebooks <learn-openvino/interactive-tutorials-python>`- Jupyter Python notebook, which demonstrate key features of the toolkit.
-* `OpenVINO Model Server <https://github.com/openvinotoolkit/model_server>`__ - a server that enables scalability via a serving microservice.
-* :doc:`OpenVINO Training Extensions  <documentation/openvino-ecosystem/openvino-training-extensions>` – a convenient environment to train Deep Learning models and convert them using the OpenVINO™ toolkit for optimized inference.
-* :doc:`Dataset Management Framework (Datumaro) <documentation/openvino-ecosystem/datumaro>` - a tool to build, transform, and analyze datasets.
-
-Community
-##############################################################
-
-OpenVINO community plays a vital role in the growth and development of the open-sourced toolkit. Users can contribute to OpenVINO and get support using the following channels:
-
-* `OpenVINO GitHub issues, discussions and pull requests <https://github.com/openvinotoolkit/openvino>`__
-* `OpenVINO Blog <https://blog.openvino.ai/>`__
-* `Community Forum <https://community.intel.com/t5/Intel-Distribution-of-OpenVINO/bd-p/distribution-openvino-toolkit>`__
-* `OpenVINO video <https://www.youtube.com/watch?v=_Jnjt21ZDS8&list=PLg-UKERBljNxdIQir1wrirZJ50yTp4eHv>`__
-* `Support Information <https://www.intel.com/content/www/us/en/support/products/96066/software/development-software/openvino-toolkit.html>`__
-
-Case Studies
-##############################################################
-
-OpenVINO has been employed in various case studies across a wide range of industries and applications, including healthcare, retail, safety and security, transportation, and more. Read about how OpenVINO enhances efficiency, accuracy, and safety in different sectors on the `success stories page <https://www.intel.com/content/www/us/en/internet-of-things/ai-in-production/success-stories.html>`__.
 
 
