@@ -20,7 +20,8 @@ main .searchForm {
 pre {
     white-space: pre-wrap;
     word-wrap: break-word;
-    border-radius: 0 !important;}
+    border-radius: 0 !important;
+}
 
 .sd-tab-content pre {
     background-color: white !important;
@@ -99,7 +100,7 @@ a#wap_dns {display: none;}
     padding-bottom: 6px;
     padding-left: 10px;
     padding-right: 10px;
-    padding-bottom: 0px;
+    padding-bottom: 12px;
     margin: 0 0 0 0;
 }
 
@@ -378,10 +379,6 @@ details.sd-dropdown summary.sd-card-header+div.sd-summary-content {
 
 .sort-btn.sort-active {
     background-image: url('media/union-up.svg');
-}
-
-div.highlight {
-    margin-bottom: 1.15rem;
 }
 
 .highlight .err {
@@ -1375,13 +1372,17 @@ nav.bd-links p.bd-links__title {
   scrollbar-color: #B5B5B5 #EAEAEA;
 }*/
 
+div[class*="highlight-"] {
+    margin: 0 0;
+}
+
 /* Chrome, Edge and Safari */
 *::-webkit-scrollbar {
     height: 8px;
     width: 8px;
   }
   *::-webkit-scrollbar-track {
-    border-radius: 4px;
+    border-radius: 0;
     background-color: #EAEAEA;
   }
   
@@ -1394,7 +1395,7 @@ nav.bd-links p.bd-links__title {
   }
   
   *::-webkit-scrollbar-thumb {
-    border-radius: 5px;
+    border-radius: 0;
     background-color: #B5B5B5;
   }
   
