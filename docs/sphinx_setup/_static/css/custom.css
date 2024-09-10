@@ -1,7 +1,7 @@
 /* Misc */
 /* =================================================== */
 .switcher-set {
-    margin-bottom:1rem;
+    margin-bottom: 1rem;
 }
 
 main img {
@@ -21,12 +21,17 @@ pre {
     white-space: pre-wrap;
     word-wrap: break-word;
     border-radius: 0 !important;
+    margin-bottom: 10px !important;
+}
+
+.scrollbox pre {
+    margin-bottom: 0 !important;
 }
 
 .sd-tab-content pre {
     background-color: white !important;
-    
-}   
+}
+
 button.copybtn {
     opacity: 100;
     border: white 1px solid;
@@ -36,8 +41,15 @@ button.copybtn {
     background-color: white !important;
 }
 
+ul.simple,
+ul.simple li ul {
+    margin-bottom: 15px;
+}
+
 /* cookie wap requirement */
-a#wap_dns {display: none;}
+a#wap_dns {
+    display: none;
+}
 
 /* Sphinx replace a default github icon*/
 .fa-square-github {
@@ -52,35 +64,35 @@ a#wap_dns {display: none;}
 
 /* Sphinx-design tabs override */
 .sd-tab-set>input:checked+label {
-    color: var(--sd-color-black)!important;
-    background-color: #f8f8f8!important;
+    color: var(--sd-color-black) !important;
+    background-color: #f8f8f8 !important;
     border: solid 1px #bdbdbd;
     border-bottom: solid 0px;
     margin-bottom: -1px;
-    border-color: #bdbdbd!important;
+    border-color: #bdbdbd !important;
 }
 
 .sd-tab-set>input:checked+label:hover {
     color: --sd-color-info-text;
-    background-color: #f8f8f8!important;
+    background-color: #f8f8f8 !important;
 }
 
 .sd-tab-set>input:not(:checked)+label:hover {
-    color: var(--sd-color-black)!important;
-    background-color: #cccccc!important;
-    border-color: var(--sd-color-card-header)!important;
+    color: var(--sd-color-black) !important;
+    background-color: #cccccc !important;
+    border-color: var(--sd-color-card-header) !important;
 }
 
 .sd-tab-set>label {
     border-bottom: 0.125rem solid transparent;
-    margin-right: 10px!important;
+    margin-right: 10px !important;
     margin-bottom: 0;
-    color: var(--sd-color-black)!important;
+    color: var(--sd-color-black) !important;
     border-color: var(--sd-color-tabs-underline-inactive);
     cursor: pointer;
     font-size: var(--sd-fontsize-tabs-label);
-    font-weight: 400!important;
-    padding: 5px 16px 2px!important;
+    font-weight: 400 !important;
+    padding: 5px 16px 2px !important;
     transition: color 250ms;
     width: auto;
     z-index: 1;
@@ -132,7 +144,7 @@ a#wap_dns {display: none;}
 /* Underline width */
 a:hover,
 .toc-entry a.nav-link:hover,
-nav.bd-links li > a:hover {
+nav.bd-links li>a:hover {
     text-decoration-thickness: 1px;
 }
 
@@ -141,7 +153,7 @@ nav.bd-links li > a:hover {
     color: white;
 }
 
-ul#navbar-main-elements > li:hover {
+ul#navbar-main-elements>li:hover {
     text-decoration: underline;
     color: #fff;
 }
@@ -153,11 +165,11 @@ nav.bd-links .current>a {
 }
 
 a.current {
-    background-color: #daf2ff!important;
+    background-color: #daf2ff !important;
 }
 
 .bd-sidebar-primary label.toctree-toggle:hover {
-    background: #daf2ff!important;
+    background: #daf2ff !important;
 }
 
 .bd-header .navbar-nav li a.nav-link {
@@ -167,26 +179,28 @@ a.current {
     padding-right: 0;
     padding: 0 0.8rem;
 }
+
 ul.bd-breadcrumbs li.breadcrumb-item:not(.breadcrumb-home):before {
     padding: .2rem .5rem 0 !important;
 }
+
 li.breadcrumb-item {
     align-items: center !important;
 }
 
 .bd-sidebar-primary {
-    display:block !important;
+    display: block !important;
     border-right: 0 !important;
     top: 0 !important;
 }
 
 a.nav-link:hover {
-    text-decoration:none !important;
+    text-decoration: none !important;
 }
 
 /* Github icon size */
 .nav-link[data-bs-original-title="GitHub"] {
-    font-size: 2rem!important;
+    font-size: 2rem !important;
 }
 
 .svg-inline--fa .fa-outdent {
@@ -242,7 +256,7 @@ nav.bd-links li>a {
 details.sd-dropdown .sd-summary-up,
 details.sd-dropdown .sd-summary-down {
     left: 10px;
-    top: 10px!important;
+    top: 10px !important;
 }
 
 
@@ -268,7 +282,7 @@ details.sd-dropdown .sd-summary-title {
 }
 
 /* Second level items                 */
-#bd-docs-nav > div > ul > li > ul {
+#bd-docs-nav>div>ul>li>ul {
     padding-left: 0.3rem;
 }
 
@@ -284,17 +298,17 @@ details.sd-dropdown .sd-summary-title {
 
 /* Doc version dropdown formatting override */
 /* =================================================== */
-[aria-labelledby="version-selector"]  {
-    min-width: 125px!important;
-    overflow-x: hidden!important;
+[aria-labelledby="version-selector"] {
+    min-width: 125px !important;
+    overflow-x: hidden !important;
 }
 
 .sst-dropdown #version-selector {
-    min-width: 125px!important;
+    min-width: 125px !important;
 }
 
-[aria-labelledby="version-selector"]  .dropdown-item {
-    padding: 0.25rem 0.5rem!important;
+[aria-labelledby="version-selector"] .dropdown-item {
+    padding: 0.25rem 0.5rem !important;
 }
 
 
@@ -306,7 +320,7 @@ details.sd-dropdown .sd-summary-title {
 
 .column-two-col-content {
     flex: 50%;
-    padding-right: 10px!important;
+    padding-right: 10px !important;
 }
 
 /* Code reference text formatting override */
@@ -317,31 +331,35 @@ code {
 }
 
 .sd-btn {
-    border-radius:0px !important;
+    border-radius: 0px !important;
     color: #0054AE !important;
     border-color: lightgray !important;
 }
 
 .sd-btn:hover {
-    border-radius:0px !important;
+    border-radius: 0px !important;
     background-color: #0054AE !important;
 }
 
-.admonition.tip, div.admonition.tip {
+.admonition.tip,
+div.admonition.tip {
     border-color: var(--pst-color-success) !important;
     background-color: #effdf6 !important;
 }
 
-.admonition.important, div.admonition.important {
+.admonition.important,
+div.admonition.important {
     border-color: var(--pst-color-attention);
     background-color: #fbf5f0 !important;
 }
 
-.admonition.warning, div.admonition.warning {
+.admonition.warning,
+div.admonition.warning {
     background-color: #fbf5f0 !important;
 }
 
-.admonition.note, div.admonition.note {
+.admonition.note,
+div.admonition.note {
     background-color: #f1fafe;
 }
 
@@ -365,15 +383,15 @@ details.sd-dropdown summary.sd-card-header:hover {
 
 .sort-btn {
     content: "";
-    background-image:url('media/arrow-small-opposite-v.svg');
+    background-image: url('media/arrow-small-opposite-v.svg');
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
     display: inline-block;
     height: 1.5rem;
-    width:1.5rem;
-    position:relative;
-    top:0.5rem;
+    width: 1.5rem;
+    position: relative;
+    top: 0.5rem;
 }
 
 .sort-btn.sort-active.ascending,
@@ -390,15 +408,15 @@ details.sd-dropdown summary.sd-card-header:hover {
 }
 
 .highlight .err {
-    border:none;
-    color:inherit;
+    border: none;
+    color: inherit;
 }
 
 .opt-notice-wrapper {
     position: fixed;
-    bottom:0;
+    bottom: 0;
     background: black;
-    width:100%;
+    width: 100%;
     text-align: center;
     padding: 1rem;
     z-index: 1000;
@@ -410,7 +428,7 @@ details.sd-dropdown summary.sd-card-header:hover {
     top: 50%;
     transform: translateY(-50%);
     text-align: center;
-    width:100%;
+    width: 100%;
     color: #fff;
 }
 
@@ -425,7 +443,7 @@ details.sd-dropdown summary.sd-card-header:hover {
     color: white;
     z-index: 1001;
     display: block;
-    padding:0 2rem;
+    padding: 0 2rem;
     font-size: var(--pst-sidebar-font-size);
     border: none;
     border-radius: 0;
@@ -435,15 +453,15 @@ details.sd-dropdown summary.sd-card-header:hover {
     margin-left: auto;
 }
 
-.transition-banner > p {
+.transition-banner>p {
     margin-bottom: 0;
 }
 
 
 .transition-banner .close-banner {
-    position:absolute;
-    top:0;
-    right:0;
+    position: absolute;
+    top: 0;
+    right: 0;
     padding: 0 1.25rem;
     color: #000;
     background-color: transparent;
@@ -457,8 +475,9 @@ details.sd-dropdown summary.sd-card-header:hover {
 }
 
 .hidden-banner {
-    display: none!important;
+    display: none !important;
 }
+
 /* Header */
 
 .bd-header label.primary-toggle {
@@ -487,6 +506,7 @@ details.sd-dropdown summary.sd-card-header:hover {
 }
 
 @media (min-width: 1200px) {
+
     .container,
     .container-lg,
     .container-md,
@@ -494,6 +514,7 @@ details.sd-dropdown summary.sd-card-header:hover {
     .container-xl {
         max-width: 100%;
     }
+
     .bd-main .bd-content .bd-article-container .bd-article {
         padding-left: 1rem !important;
     }
@@ -550,12 +571,12 @@ details.sd-dropdown summary.sd-card-header:hover {
 }
 
 .empty-chart-container {
-  height: 80px;
-  line-height: 80px;
-  width: 100%;
-  text-align: center;
-  background-color: #f3f3f3;
-  border-radius: 5px;
+    height: 80px;
+    line-height: 80px;
+    width: 100%;
+    text-align: center;
+    background-color: #f3f3f3;
+    border-radius: 5px;
 }
 
 .graph-chart-title {
@@ -635,7 +656,7 @@ details.sd-dropdown summary.sd-card-header:hover {
 
 .chart {
     height: 500px;
-    padding:0;
+    padding: 0;
 }
 
 .chart-placeholder {
@@ -643,10 +664,10 @@ details.sd-dropdown summary.sd-card-header:hover {
 }
 
 .build-benchmark-section {
-  background-color: #f9f9f9;
-  padding: 10px 30px 80px 30px;
-  display: flex;
-  flex-wrap: wrap;
+    background-color: #f9f9f9;
+    padding: 10px 30px 80px 30px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .build-benchmark-section .title {
@@ -668,21 +689,21 @@ details.sd-dropdown summary.sd-card-header:hover {
 }
 
 .platform-configurations {
-  font-size: larger;
-  display: flex;
-  flex-wrap: wrap;
+    font-size: larger;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .platform-configurations div {
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 .platform-configurations a {
-  padding-right: 24px;
+    padding-right: 24px;
 }
 
 .platform-configurations a img {
-  padding-right: 24px;
+    padding-right: 24px;
 }
 
 .efficiency-icon {
@@ -769,7 +790,7 @@ details.sd-dropdown summary.sd-card-header:hover {
 }
 
 .modal-content-grid-container .column {
-  min-width: 100px;
+    min-width: 100px;
 }
 
 .modal-content-grid-container label {
@@ -785,9 +806,54 @@ details.sd-dropdown summary.sd-card-header:hover {
     margin-left: -14px;
 }
 
-.modal-content-grid-item h5 {
-    font-weight: 530;
-    margin: 0;
+h1 {
+    display: block;
+    font-size: 1.9em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: 480;
+}
+
+h2 {
+    display: block;
+    font-size: 1.6em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: 480;
+}
+
+h3 {
+    display: block;
+    font-size: 1.35em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: 500;
+}
+
+h4 {
+    display: block;
+    font-size: 1.15em;
+    margin-top: 1.33em;
+    margin-bottom: 1.33em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: 500;
+}
+
+h5 {
+    display: block;
+    font-size: 1em;
+    margin-top: 1.67em;
+    margin-bottom: 1.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: 500;
 }
 
 .modal-footer {
@@ -886,7 +952,7 @@ details.sd-dropdown summary.sd-card-header:hover {
 
     .span-element-big {
         grid-column: 1 / span 2;
-}
+    }
 }
 
 
@@ -1024,141 +1090,141 @@ details.sd-dropdown summary.sd-card-header:hover {
 .selectable-box.selected {
     color: #fff;
     background-color: #0054AE;
-    border-color:#0068B5;
+    border-color: #0068B5;
 }
 
 .checkmark-container {
-  display: block;
-  position: relative;
-  padding-left: 20px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+    display: block;
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 /* Hide the browser's default checkbox */
 .checkmark-container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
 }
 
 /* Create a custom checkbox */
 .checkmark {
-  position: absolute;
-  top: 5px;
-  left: 0;
-  height: 15px;
-  width: 15px;
-  border: #0054AE 2px solid;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    border: #0054AE 2px solid;
 }
 
 .checkmark.radiobutton {
-  border-radius: 50%;
+    border-radius: 50%;
 }
 
 /* On mouse-over, add a grey background color */
-.checkmark-container:hover input ~ .checkmark {
-  background-color: #ccc;
+.checkmark-container:hover input~.checkmark {
+    background-color: #ccc;
 }
 
 /* When the checkbox is checked, add a blue background */
-.checkmark-container input:checked ~ .checkmark {
-  background-color: #0054AE;
+.checkmark-container input:checked~.checkmark {
+    background-color: #0054AE;
 }
 
-.checkmark-container input:disabled ~ .checkmark {
+.checkmark-container input:disabled~.checkmark {
     background: #d3d3d3;
     border: 2px solid #8C8C8C;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
+    content: "";
+    position: absolute;
+    display: none;
 }
 
 /* Show the checkmark when checked */
-.checkmark-container input:checked ~ .checkmark:after {
-  display: block;
+.checkmark-container input:checked~.checkmark:after {
+    display: block;
 }
 
 /* Style the checkmark/indicator */
 .checkmark-container .checkmark:after {
-  left: 3px;
-  top: 0;
-  width: 5px;
-  height: 9px;
-  border: solid white;
-  border-width: 0 2px 2px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
+    left: 3px;
+    top: 0;
+    width: 5px;
+    height: 9px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 .checkmark-container .checkmark.radiobutton:after {
-  border-radius: 50%;
-  top: 3px;
-  left: 3px;
-  width: 5px;
-  height: 5px;
-  background: white;
-  -webkit-transform: none;
-  -ms-transform: none;
-  transform: none;
+    border-radius: 50%;
+    top: 3px;
+    left: 3px;
+    width: 5px;
+    height: 5px;
+    background: white;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
 }
 
 
 #performance-information-frequently-asked-questions section h2 {
-  cursor: pointer;
-  color: #0054AE;
-  font-size: larger;
-  margin-top: 12px;
+    cursor: pointer;
+    color: #0054AE;
+    font-size: larger;
+    margin-top: 12px;
 }
 
 #performance-information-frequently-asked-questions table tr:nth-child(even),
 table#model-accuracy-and-perf-int8-fp32-table tr:nth-child(even),
 table#model-accuracy-and-perf-int8-fp32-table .light-header {
-  background-color: #f9f9f9;
+    background-color: #f9f9f9;
 }
 
 table#model-accuracy-and-perf-int8-fp32-table tr.header {
-  background-color: #e9eaeb;
+    background-color: #e9eaeb;
 }
 
 table#model-accuracy-and-perf-int8-fp32-table td.data {
-  border-left: #e9eaeb solid 1px;
+    border-left: #e9eaeb solid 1px;
 }
 
 #performance-information-frequently-asked-questions table {
-  overflow: auto;
+    overflow: auto;
 }
 
 #performance-information-frequently-asked-questions table thead {
-  background-color: #e9eaeb;
+    background-color: #e9eaeb;
 }
 
 #performance-information-frequently-asked-questions section h2::before {
-  content: url('media/chevron-right.svg');
-  vertical-align: -10px;
-  margin-left: -32px;
+    content: url('media/chevron-right.svg');
+    vertical-align: -10px;
+    margin-left: -32px;
 }
 
 #performance-information-frequently-asked-questions section h2.expanded::before {
-  content: url('media/chevron-down.svg');
-  vertical-align: -10px;
+    content: url('media/chevron-down.svg');
+    vertical-align: -10px;
 }
 
 #performance-information-frequently-asked-questions section p,
 #performance-information-frequently-asked-questions section table {
-  display: none;
-  padding-left: 30px;
+    display: none;
+    padding-left: 30px;
 }
 
 
@@ -1328,6 +1394,7 @@ table#model-accuracy-and-perf-int8-fp32-table td.data {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1338,6 +1405,7 @@ table#model-accuracy-and-perf-int8-fp32-table td.data {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -1350,8 +1418,8 @@ input:-webkit-autofill {
 /* Scrollbox Extension */
 /* =================================================== */
 .scrollbox {
-    overflow-y:scroll;
-    height:300px;
+    overflow-y: scroll;
+    height: 300px;
     margin-bottom: 20px;
 }
 
@@ -1389,29 +1457,30 @@ div[class*="highlight-"] {
 *::-webkit-scrollbar {
     height: 8px;
     width: 8px;
-  }
-  *::-webkit-scrollbar-track {
+}
+
+*::-webkit-scrollbar-track {
     border-radius: 0;
     background-color: #EAEAEA;
-  }
-  
-  *::-webkit-scrollbar-track:hover {
+}
+
+*::-webkit-scrollbar-track:hover {
     background-color: #EFFAFC;
-  }
-  
-  *::-webkit-scrollbar-track:active {
+}
+
+*::-webkit-scrollbar-track:active {
     background-color: #EFFAFC;
-  }
-  
-  *::-webkit-scrollbar-thumb {
+}
+
+*::-webkit-scrollbar-thumb {
     border-radius: 0;
     background-color: #B5B5B5;
-  }
-  
-  *::-webkit-scrollbar-thumb:hover {
+}
+
+*::-webkit-scrollbar-thumb:hover {
     background-color: #0068B5;
-  }
-  
-  *::-webkit-scrollbar-thumb:active {
+}
+
+*::-webkit-scrollbar-thumb:active {
     background-color: #0068B5;
-  }
+}
