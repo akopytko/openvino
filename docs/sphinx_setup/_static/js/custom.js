@@ -43,8 +43,6 @@ document.addEventListener('click', () => {
     });
 });
 
-
-
 document.addEventListener('DOMContentLoaded', function () {
     var dropdownButtons = document.querySelectorAll('.sst-btn');
     dropdownButtons.forEach((ddBtn) => {
@@ -103,8 +101,23 @@ $(document).ready(function () {
     initCollapsibleHeaders(); // included with the new benchmarks page
     createSphinxTabSets();
     initSplide();
+    initSidebar();
 });
+function initSidebar() {
+    const resizer = document.querySelector("#bd-resizer");
+    const sidebar = document.querySelector("#bd-sidebar");
+    resizer.addEventListener("mousedown", (event) => {
+        document.addEventListener("mousemove", resize, false);
+        document.addEventListener("mouseup", () => {
+            document.removeEventListener("mousemove", resize, false);
+        }, false);
+    });
 
+    function resize(e) {
+        const size = `${e.x}px`;
+        sidebar.style.flexBasis = size;
+    }
+}
 // Determine where we'd go if clicking on a version selector option
 function getPageUrlWithVersion(version) {
     const currentUrl = window.location.href;
