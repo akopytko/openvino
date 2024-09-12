@@ -206,7 +206,7 @@ $(document).ready(function () {
     function showModal() {
         $('body').css('overflow', 'hidden');
 
-        fetch('../_static/benchmarks_files/graph-data-ov.json')
+        fetch('../_static/benchmarks_files/data/graph-data-ov.json')
             .then((response) => response.json())
             .then((jsonData) => {
                 fetch('../_static/benchmarks_files/graph-config.json')
