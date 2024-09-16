@@ -88,6 +88,7 @@ function addLegalNotice() {
 
 $(document).ready(function () {
     initSidebar();
+    handleSidebar();
     createVersions();
     updateTitleTag();
     updateLanguageSelector();
@@ -104,7 +105,7 @@ $(document).ready(function () {
     addFooter();
 });
 
-function initSidebar() {
+function handleSidebar() {
     const resizer = document.querySelector("#bd-resizer");
     const sidebar = document.querySelector("#bd-sidebar");
     resizer.addEventListener("mousedown", (event) => {
@@ -116,9 +117,22 @@ function initSidebar() {
 
     function resize(e) {
         const size = `${e.x}px`;
+        localStorage['resizeSidebarX'] = size;
         sidebar.style.flexBasis = size;
     }
 }
+
+function initSidebar() {
+    const sidebar = document.querySelector("#bd-sidebar");
+    var size;
+    if(localStorage['resizeSidebarX'] === null){
+        size = "25%";
+    }else{
+        size = localStorage['resizeSidebarX'];
+    }    
+    sidebar.style.flexBasis = size;
+}
+
 // Determine where we'd go if clicking on a version selector option
 function getPageUrlWithVersion(version) {
     const currentUrl = window.location.href;

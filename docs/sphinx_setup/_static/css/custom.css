@@ -189,6 +189,7 @@ li.breadcrumb-item {
     display: block !important;
     border-right: 0 !important;
     top: 0 !important;
+    width: unset !important;
 }
 
 a.nav-link:hover {
@@ -222,12 +223,12 @@ a.nav-link:hover {
     flex-basis: 5px;
     z-index: 2;
     cursor: col-resize;
-    background: #cdcdcd;
+    background: #e3e3e3;
     margin-left: 1px;
 }
 
 #bd-resizer:hover {
-    background: #cdcdcd;
+    background: #e3e3e3;
     flex-basis: 5px;
 }
 
@@ -1481,18 +1482,18 @@ div[class*="highlight-"] {
 .bd-sidebar::-webkit-scrollbar-thumb,
 .scrollbox::-webkit-scrollbar-thumb {
     border-radius: 4px;
-    background-color: #afafaf;
+    background-color: #cdcdcd;
     width: 8px !important;
 }
 
 .bd-sidebar::-webkit-scrollbar-thumb:hover,
 .scrollbox::-webkit-scrollbar-thumb:hover {
-    background-color: #858585;
+    background-color: #cdcdcd;
     width: 8px !important;
 }
 
 .bd-sidebar::-webkit-scrollbar-thumb:active,
 .scrollbox::-webkit-scrollbar-thumb:active {
-    background-color: #858585;
+    background-color: #cdcdcd;
     width: 8px !important;
 }
