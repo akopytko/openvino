@@ -219,7 +219,7 @@ a.nav-link:hover {
 }
 
 #bd-resizer {
-    flex-basis: 6px;
+    flex-basis: 5px;
     z-index: 2;
     cursor: col-resize;
     background: #cdcdcd;
@@ -227,8 +227,8 @@ a.nav-link:hover {
 }
 
 #bd-resizer:hover {
-    background: #0068B5;
-    flex-basis: 6px;
+    background: #cdcdcd;
+    flex-basis: 5px;
 }
 
 nav.bd-links li>a {
@@ -1452,8 +1452,6 @@ nav.bd-links p.bd-links__title {
     display: none;
 }
 
-
-
 div[class*="highlight-"] {
     margin: 0 0;
 }
@@ -1461,37 +1459,40 @@ div[class*="highlight-"] {
 .bd-sidebar::-webkit-scrollbar,
 .scrollbox::-webkit-scrollbar {
     height: 8px;
-    width: 8px;
+    width: 5px;
 }
 
 .bd-sidebar::-webkit-scrollbar-track,
 .scrollbox::-webkit-scrollbar-track {
-    border-radius: 0;
-    background-color: #EAEAEA;
+    border-radius: 4px;
+    background-color: white;
 }
 
 .bd-sidebar::-webkit-scrollbar-track:hover,
 .scrollbox::-webkit-scrollbar-track:hover {
-    background-color: #EFFAFC;
+    background-color: white;
 }
 
 .bd-sidebar::-webkit-scrollbar-track:active,
 .scrollbox::-webkit-scrollbar-track:active {
-    background-color: #EFFAFC;
+    background-color: white;
 }
 
 .bd-sidebar::-webkit-scrollbar-thumb,
 .scrollbox::-webkit-scrollbar-thumb {
-    border-radius: 0;
-    background-color: #B5B5B5;
+    border-radius: 4px;
+    background-color: #afafaf;
+    width: 8px !important;
 }
 
 .bd-sidebar::-webkit-scrollbar-thumb:hover,
 .scrollbox::-webkit-scrollbar-thumb:hover {
-    background-color: #0068B5;
+    background-color: #858585;
+    width: 8px !important;
 }
 
 .bd-sidebar::-webkit-scrollbar-thumb:active,
 .scrollbox::-webkit-scrollbar-thumb:active {
-    background-color: #0068B5;
+    background-color: #858585;
+    width: 8px !important;
 }
