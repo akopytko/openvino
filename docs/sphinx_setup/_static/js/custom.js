@@ -87,7 +87,7 @@ function addLegalNotice() {
 }
 
 $(document).ready(function () {
-    addFooter();
+    initSidebar();
     createVersions();
     updateTitleTag();
     updateLanguageSelector();
@@ -101,8 +101,9 @@ $(document).ready(function () {
     initCollapsibleHeaders(); // included with the new benchmarks page
     createSphinxTabSets();
     initSplide();
-    initSidebar();
+    addFooter();
 });
+
 function initSidebar() {
     const resizer = document.querySelector("#bd-resizer");
     const sidebar = document.querySelector("#bd-sidebar");
