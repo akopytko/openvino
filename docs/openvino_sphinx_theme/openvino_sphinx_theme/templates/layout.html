@@ -92,7 +92,7 @@ or not theme_secondary_sidebar_items %}
       {%- include "sections/header.html" %}
     </nav>
   {% endblock docs_navbar %}
-  <div id="bd-container" class="bd-container">
+  <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       {# Primary sidebar #}
       <div id="bd-sidebar" class="bd-sidebar-primary bd-sidebar{% if not sidebars %} hide-on-wide{% endif %}">
@@ -100,7 +100,7 @@ or not theme_secondary_sidebar_items %}
       </div>
       {# Using an ID here so that the skip-link works #}
       <div id="bd-resizer"></div>
-      <main id="main-content" class="bd-main">
+      <main class="bd-main">
         {# Main content area #}
         {% block docs_main %}
           <div class="bd-content">

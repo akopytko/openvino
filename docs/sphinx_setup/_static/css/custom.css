@@ -188,7 +188,7 @@ li.breadcrumb-item {
 div.bd-page-width .bd-sidebar-primary {
     display: block !important;
     border-right: 0 !important;
-    top: 0 !important;
+    /* top: 0 !important; */
 }
 
 a.nav-link:hover {
@@ -219,7 +219,7 @@ a.nav-link:hover {
 }
 
 #bd-resizer {
-    flex-basis: 5px;
+    flex-basis: 2px;
     z-index: 2;
     cursor: col-resize;
     background: #e3e3e3;
@@ -227,8 +227,9 @@ a.nav-link:hover {
 }
 
 #bd-resizer:hover {
-    background: #e3e3e3;
-    flex-basis: 5px;
+    background: #0068b5;
+    flex-basis: 2px;
+    box-shadow: 0 5px 5px rgba(36, 36, 36, 0.5) !important;
 }
 
 nav.bd-links li>a {
@@ -1487,12 +1488,12 @@ div[class*="highlight-"] {
 
 .bd-sidebar::-webkit-scrollbar-thumb:hover,
 .scrollbox::-webkit-scrollbar-thumb:hover {
-    background-color: #cdcdcd;
+    background-color: #7a7676;
     width: 8px !important;
 }
 
 .bd-sidebar::-webkit-scrollbar-thumb:active,
 .scrollbox::-webkit-scrollbar-thumb:active {
-    background-color: #cdcdcd;
+    background-color: #7a7676;
     width: 8px !important;
 }
