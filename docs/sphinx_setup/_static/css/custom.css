@@ -185,11 +185,10 @@ li.breadcrumb-item {
     align-items: center !important;
 }
 
-.bd-sidebar-primary {
+div.bd-page-width .bd-sidebar-primary {
     display: block !important;
     border-right: 0 !important;
     top: 0 !important;
-    width: unset !important;
 }
 
 a.nav-link:hover {
@@ -224,7 +223,7 @@ a.nav-link:hover {
     z-index: 2;
     cursor: col-resize;
     background: #e3e3e3;
-    margin-left: 1px;
+    margin-left: 0px;
 }
 
 #bd-resizer:hover {

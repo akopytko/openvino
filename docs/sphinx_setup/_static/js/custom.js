@@ -86,6 +86,7 @@ function addLegalNotice() {
     }
 }
 
+
 $(document).ready(function () {
     initSidebar();
     handleSidebar();
@@ -125,11 +126,11 @@ function handleSidebar() {
 function initSidebar() {
     const sidebar = document.querySelector("#bd-sidebar");
     var size;
-    if(localStorage['resizeSidebarX'] === null){
-        size = "25%";
+    if(localStorage['resizeSidebarX'] == null){
+        size = "350px";
     }else{
         size = localStorage['resizeSidebarX'];
-    }    
+    }
     sidebar.style.flexBasis = size;
 }
 
@@ -349,7 +350,6 @@ function addFooter() {
 }
 
 function initSplide() {
-
     var splide = new Splide('.splide', {
         type: 'fade',
         autoHeight: true,
