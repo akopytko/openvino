@@ -23,9 +23,11 @@ selection of public neural networks and Intel® devices. The results may help yo
 hardware to use in your applications or plan AI workload for the hardware you have already
 implemented in your solutions. Click the buttons below to see the chosen benchmark data.
 
-.. grid:: 1 1 2 2
-   :gutter: 4
+Graph view
++++++++++++++++++++++++++++++
 
+.. grid:: 1 1 3 3
+   
    .. grid-item::
 
       .. button-link:: #
@@ -34,7 +36,7 @@ implemented in your solutions. Click the buttons below to see the chosen benchma
          :outline:
          :expand:
 
-         :material-regular:`bar_chart;1.4em` OpenVINO Benchmark Graphs (general)
+         :material-regular:`bar_chart;1.4em` OpenVINO Benchmark Graphs
 
    .. grid-item::
 
@@ -44,17 +46,7 @@ implemented in your solutions. Click the buttons below to see the chosen benchma
          :outline:
          :expand:
 
-         :material-regular:`bar_chart;1.4em` OVMS Benchmark Graphs (general)
-
-   .. grid-item::
-
-      .. button-link:: ./performance-benchmarks/generative-ai-performance.html
-         :class: ov-toolkit-benchmark-genai
-         :color: primary
-         :outline:
-         :expand:
-
-         :material-regular:`table_view;1.4em` LLM performance for AI PC
+         :material-regular:`bar_chart;1.4em` OVMS Benchmark Graphs
 
    .. grid-item::
 
@@ -66,10 +58,40 @@ implemented in your solutions. Click the buttons below to see the chosen benchma
 
          :material-regular:`bar_chart;1.4em` OVMS for GenAI
 
+Table view
++++++++++++++++++++++++++++++
 
+.. grid:: 1 1 3 3
+   
+   .. grid-item::
 
+      .. button-link:: #
+         :class: ov-toolkit-benchmark-table
+         :color: primary
+         :outline:
+         :expand:
 
+         :material-regular:`table_view;1.4em` OpenVINO Benchmark Table
 
+   .. grid-item::
+
+      .. button-link:: #
+         :class: ovms-toolkit-benchmark-table
+         :color: primary
+         :outline:
+         :expand:
+
+         :material-regular:`table_view;1.4em` OVMS Benchmark Table
+
+   .. grid-item::
+
+      .. button-link:: ./performance-benchmarks/generative-ai-performance.html
+         :class: ov-toolkit-benchmark-genai
+         :color: primary
+         :outline:
+         :expand:
+
+         :material-regular:`table_view;1.4em` LLM performance for AI PC
 
 
 **Key performance indicators and workload parameters**

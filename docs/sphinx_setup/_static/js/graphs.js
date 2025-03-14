@@ -383,6 +383,10 @@ $(document).ready(function () {
                     modalFilters.style.display = "none";
                 }
             }
+
+            $(document).on('keydown', function (e) {
+                if (e.key === "Escape") hideModal();
+            });
         });
     }
 
@@ -543,9 +547,9 @@ $(document).ready(function () {
                     charts.forEach((chartItem) => {
                         chartItem.setDatasetVisibility(item.datasetIndex, !chartItem.isDatasetVisible(item.datasetIndex));
                         chartItem.update();
-                      })
+                    })
                 };
-                
+
                 const boxSpan = document.createElement('span');
                 boxSpan.style.background = item.fillStyle;
                 boxSpan.style.borderColor = item.strokeStyle;
@@ -663,7 +667,7 @@ $(document).ready(function () {
             var filteredGraphData = Filter.BySortPlatforms(filteredIeTypes, platforms);
             var filterdPlatforms = platforms.filter(platform =>
                 filteredGraphData.some(filteredGraph => platform === filteredGraph.Platform)
-              );
+            );
             $('.chart-placeholder').append(chartContainer);
             if (filteredGraphData.length > 0) {
                 if (isLLM === true) {
@@ -762,7 +766,7 @@ $(document).ready(function () {
             columnHeaderContainer.append(columnIcon);
             var columnHeader = $('<div class="chart-header">');
             columnHeader.append($('<div class="title">' + graphConfig.chartTitle + '</div>'));
-            columnHeader.append($('<div class="subtitle">' + graphConfig.unit + ' ' + appConfig.UnitDescription[graphConfig.unit] +'</div>'));
+            columnHeader.append($('<div class="subtitle">' + graphConfig.unit + ' ' + appConfig.UnitDescription[graphConfig.unit] + '</div>'));
             columnHeaderContainer.append(columnHeader);
             chartGraphsContainer.append(graphItem);
             var graphClass = $('<div>');

@@ -201,6 +201,7 @@ html_js_files = [
     'js/splide.min.js',
     'js/sortable_tables.js',
     'js/graphs.js',
+    'js/benchamarksToDataTables.js',
     'js/gsearch.js',
     'js/hide_banner.js',
     'js/newsletter.js',

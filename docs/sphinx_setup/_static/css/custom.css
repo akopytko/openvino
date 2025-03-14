@@ -782,7 +782,7 @@ div.highlight {
     padding: 36px;
     border: 1px solid #888;
     width: 95%;
-    max-width: 1140px;
+    max-width: 1400px;
     max-height: 85%;
     border-radius: var(--bs-modal-border-radius)
 }
@@ -814,6 +814,11 @@ div.highlight {
     display: flex;
     flex-direction: column;
     min-height: 0;
+}
+
+.modal-display-tables {
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .modal-content-grid-container {
