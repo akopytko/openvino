@@ -121,18 +121,6 @@ $(document).ready(function () {
         layout: {
           topStart: {
             buttons: [
-              'pageLength',
-              {
-                extend: 'colvis',
-                postfixButtons: ['colvisRestore'],
-              },
-              {
-                extend: 'print',
-                text: 'Print PDF',
-                exportOptions: {
-                  columns: ':visible'
-                }
-              },
               {
                 extend: 'collection',
                 text: `Parameter: ${metricType}`,
@@ -153,13 +141,24 @@ $(document).ready(function () {
                     }
                   }
                 ]
+              },
+              {
+                extend: 'colvis',
+                postfixButtons: ['colvisRestore'],
+              },
+              'pageLength',
+              {
+                extend: 'print',
+                text: 'Print PDF',
+                exportOptions: {
+                  columns: ':visible'
+                }
               }
             ]
           }
         }
       });
     }
-
     renderTable();
   }
 });
